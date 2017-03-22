@@ -48,34 +48,46 @@
 		var event=event||window.event;
 		var target=event.target||event.srcElement;
 		var ins=document.getElementById("ins");
-		if(ins.value){
-			var newspan=creates(ins.value);
-			switch(target.id){
-				case "leftin":
-					container.insertBefore(newspan,container.firstChild);
-					break;
-				case "rightin":
-					container.appendChild(newspan);
-					break;
-				case "leftout":
-					if(container.firstChild){
-						alert(container.firstChild.innerHTML);
-						container.removeChild(container.firstChild);
+		var newspan=creates(ins.value);
+		switch(target.id){
+			case "leftin":
+				if(ins.value){
+					if(/^[0-9]*$/g.test(ins.value)){
+						container.insertBefore(newspan,container.firstChild);
+						//;
 					}else{
-						alert("已清空");
+						alert("请输入数字");
 					}
-					break;
-				case "rightout":
-					if(container.lastChild){
-						alert(container.lastChild.innerHTML);
-						container.removeChild(container.lastChild);
+					ins.value="";
+				}	
+				break;
+			case "rightin":
+				if(ins.value){
+					if(/^[0-9]*$/g.test(ins.value)){
+						container.appendChild(newspan);
+						//ins.value="";
 					}else{
-						alert("已清空");
+						alert("请输入数字");
 					}
-					break;
-			}
-		}
-	
+				}
+				break;
+			case "leftout":
+				if(container.firstChild){
+					alert(container.firstChild.innerHTML);
+					container.removeChild(container.firstChild);
+				}else{
+					alert("已清空");
+				}
+				break;
+			case "rightout":
+				if(container.lastChild){
+					alert(container.lastChild.innerHTML);
+					container.removeChild(container.lastChild);
+				}else{
+					alert("已清空");
+				}
+				break;
+		}	
 	}
 	function creates(val){
 		var span=document.createElement("span");
