@@ -62,11 +62,15 @@
 				case "leftout":
 					if(container.firstChild){
 						container.removeChild(container.firstChild);
+					}else{
+						alert("已清空");
 					}
 					break;
 				case "rightout":
 					if(container.lastChild){
 						container.removeChild(container.lastChild);
+					}else{
+						alert("已清空");
 					}
 					break;
 			}
