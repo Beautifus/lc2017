@@ -56,7 +56,7 @@ function getData() {
  */
 function sortAqiData(data) {
   var sortData=data.sort(function(a,b){
-    return a[1][0]-b[1][0];
+    return b[1][0]-a[1][0];
   })
   return sortData;
 }
