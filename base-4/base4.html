@@ -37,9 +37,7 @@
 			<button id="leftout">左侧出</button>
 			<button id="rightout">右侧出</button>
 		</div>
-		<div id="container">
-		
-		</div>
+		<div id="container"></div>
 	</div>
 	
 </body>
@@ -61,6 +59,7 @@
 					break;
 				case "leftout":
 					if(container.firstChild){
+						alert(container.firstChild.innerHTML);
 						container.removeChild(container.firstChild);
 					}else{
 						alert("已清空");
@@ -68,6 +67,7 @@
 					break;
 				case "rightout":
 					if(container.lastChild){
+						alert(container.lastChild.innerHTML);
 						container.removeChild(container.lastChild);
 					}else{
 						alert("已清空");
@@ -81,7 +81,14 @@
 		var span=document.createElement("span");
 		span.className="spans";
 		span.innerHTML=val;
+		span.onclick=function(event){
+			var event=event||window.event;
+			var target=event.target||event.srcElement;
+			var parent=target.parentNode;
+			parent.removeChild(target);
+		};
 		return span;
 	}
+
 </script>
 </html>
