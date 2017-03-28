@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 05</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.spans{
+			display:inline-block;
+			width:18px;
+			margin:10px 0px;
+			font-size:8px;
+			text-align:center;
+			background:#666;
+			padding-top:0px;
+		}
+		#handlers{
+			margin-top:20px;
+			margin-left:100px;
+		}
+		#buttons{
+			margin-top:10px;
+		}
+		#container{
+			display: flex;
+			justify-content:flex-start;
+			align-items:flex-end;
+			background:black;
+		}
+		#container span{
+
+		}
+	</style>
+</head>
+<body>
+	<div id="handlers">
+		<label for="ins">请输入：</label>
+		<input type="text" name="ins" id="ins">
+		<div id="buttons">
+			<button id="leftin">左侧入</button>
+			<button id="rightin">右侧入</button>
+			<button id="leftout">左侧出</button>
+			<button id="rightout">右侧出</button>
+			<select id="options">
+				<option value="bubble">冒泡</option>
+				<option value="quick">快排</option>
+			</select>
+			<button id="sort">sort</button>
+		</div>
+		<div id="container"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	var container=document.getElementById("container");
+	var buttons=document.getElementById("buttons");
+	var sort=document.getElementById("sort");
+	var number=0;
+	var data=[];
+	var options=document.getElementById("options");
+	buttons.onclick=function(event){
+		var event=event||window.event;
+		var target=event.target||event.srcElement;
+		var ins=document.getElementById("ins");
+		var newspan=creates(ins.value);
+		switch(target.id){
+			case "leftin":
+				if(ins.value){
+					if(/^[0-9]{2,3}$/g.test(ins.value)&&ins.value<=100){
+						if(number<60){
+							container.insertBefore(newspan,container.firstChild);
+							number++;
+						}else{
+							alert("最多输入60个");
+						}
+					}else{
+						alert("请输入10-100之间的数字");
+					}
+					ins.value="";
+				}	
+				break;
+			case "rightin":
+				if(ins.value){
+					if(/^[0-9]{2,3}$/g.test(ins.value)&&ins.value<=100){
+						if(number<60){
+							container.appendChild(newspan);
+							number++;
+						}else{
+							alert("最多输入60个");
+						}
+					}else{
+						alert("请输入10-100之间的数字");
+					}
+					ins.value="";
+				}
+				break;
+			case "leftout":
+				if(container.firstChild){
+					alert(container.firstChild.style.height);
+					container.removeChild(container.firstChild);
+					number--;
+				}else{
+					alert("已清空");
+				}
+				break;
+			case "rightout":
+				if(container.lastChild){
+					alert(container.lastChild.style.height);
+					container.removeChild(container.lastChild);
+					number--;
+				}else{
+					alert("已清空");
+				}
+				break;
+		}	
+	}
+	function creates(val){
+		var span=document.createElement("span");
+		span.className="spans";
+		span.style.height=val+"px";
+		span.innerHTML=val;
+		span.onclick=function(event){
+			var event=event||window.event;
+			var target=event.target||event.srcElement;
+			var parent=target.parentNode;
+			parent.removeChild(target);
+		};
+		return span;
+	}
+	function bubble(listsData,start,length){
+		for(var i=0;i<=length;i++){
+			for(var j=i+1;j<=length;j++){
+					if(parseInt(listsData[i])>parseInt(listsData[j])){
+						var temp=listsData[i];
+						listsData[i]=listsData[j];
+						listsData[j]=temp;
+						var a=[];
+						a.push(i,j);
+						data.push(a);
+					}
+
+			}
+		}
+		return data;
+	}
+	
+	function merge(a,l,mid,r){
+		var b=[];
+		for(var i=0;i<a.length;i++){
+			b[i]=a[i];
+		}
+		var p=l,q=mid+1;
+		for(var k=0;p<=mid&&q<=r;k++){
+			if(b[p]<b[q]){
+				a[k]=b[p++];
+				var a=[];
+				a.push(k,p);
+				data.push(a);
+			}else{
+				a[k]=b[q++];
+				var a=[];
+				a.push(k,q);
+				data.push(a);
+			}
+		}
+		while(p<=mid){
+			a[k]=b[p++];
+			var a=[];
+			a.push(k,p);
+			data.push(a);
+		}
+		while(q<=r){
+			a[k]=b[q++];
+			var a=[];
+			a.push(k,q);
+			data.push(a);
+		}
+	}
+	function mergeSort(a,l,r){
+		if(l<r){
+			var mid=(l+r)/2;
+			mergeSort(a,l,mid);
+			mergeSort(a,mid+1,r);
+			merge(a,l,mid,r);
+		}
+	}
+	function quickSort(datas,low,high){	
+		if(low<high){
+			var pivot=partition(datas,low,high);
+			quickSort(datas,low,pivot-1);
+			quickSort(datas,pivot+1,high);
+		}
+	}
+	function partition(d,low,high){
+		var pivot=d[low];
+		var p=low;
+		for(var i=low+1;i<=high;i++){
+			if(parseInt(d[i])<parseInt(pivot)){
+				p++;
+				var temp=d[i];
+				d[i]=d[p];
+				d[p]=temp;
+				var a=[];
+				a.push(i,p);
+				data.push(a);
+			}
+		}
+		var temp=d[p];
+		d[p]=d[low];
+		d[low]=temp;
+		var a=[];
+		a.push(low,p);
+		data.push(a);
+		return p;
+	}
+	function sorts(data){
+		var lists=container.children;
+		var i=0;
+		var tem,ten;
+		t=setInterval(function(){
+			let m=data[i][0],n=data[i][1];
+			var temp=lists[n].style.height;	
+			lists[n].style.height=lists[m].style.height;
+			lists[m].style.height=temp;
+			lists[m].innerHTML=lists[m].style.height.slice(0,lists[m].style.height.indexOf("px"));
+			//alert(lists[m].innerHTML);
+			lists[n].innerHTML=lists[n].style.height.slice(0,lists[n].style.height.indexOf("px"));
+			//alert(lists[n].innerHTML)
+			if(tem>=0){
+				lists[tem].style.background="#fff";
+			}
+			if(ten>=0){
+				lists[ten].style.background="#fff";
+			}
+			lists[n].style.background="blue";
+			lists[m].style.background="red";
+			tem=n;
+			ten=m;
+			i++;
+			if(i==data.length){
+				if(ten){
+					lists[ten].style.background="#fff";
+				}
+				clearInterval(t);
+				var j=0;
+				lists[tem].style.background="#fff";
+				var tim=setInterval(function(){
+					lists[j].style.background="blue";
+					j++;
+					if(j==lists.length){
+						clearInterval(tim);
+						for(var k=0;k<lists.length;k++){
+							lists[k].style.background="#fff";
+						}
+					}
+				},100);
+			}
+		},1000);	
+	}
+	sort.onclick=function(){
+		var lists=container.children;
+		var listsData=[];
+		data=[];
+		for(var i=0;i<lists.length;i++){
+			listsData.push(lists[i].style.height.slice(0,lists[i].style.height.indexOf("px")));
+		}
+		for(var i=0;i<listsData.length;i++){
+			listsData[i]=parseInt(listsData[i]);
+		}
+		switch(options.value){
+			case 'bubble':
+				data=bubble(listsData,0,listsData.length-1);
+				break;
+			case 'quick':
+				quickSort(listsData,0,listsData.length-1);
+				break;
+		}
+		sorts(data);
+		
+	}
+</script>
+</html>
