@@ -47,6 +47,7 @@
 			<select id="options">
 				<option value="bubble">冒泡</option>
 				<option value="quick">快排</option>
+				<option value="heap">堆排序</option>
 			</select>
 			<button id="sort">sort</button>
 		</div>
@@ -142,6 +143,47 @@
 					}
 
 			}
+		}
+		return data;
+	}
+	function heapAdjust(a,p,size){
+		var  max=p
+		var lchild=2*p+1;
+		var rchild=2*p+2;
+		if(p<=size/2){
+			if(lchild<size&&a[lchild]>a[max]){
+					max=lchild;
+			}
+			if(rchild<size&&a[rchild]>a[max]){
+					max=rchild;
+			}
+			if(p!=max){
+				var temp=a[p];
+				a[p]=a[max];
+				a[max]=temp;
+				var b=[];
+				b.push(max,p);
+				data.push(b);
+				heapAdjust(a,max,size);
+				
+			}
+		}
+	}
+	function buildHeap(a,size){
+		for(var i=size/2;i>=0;i--){
+			heapAdjust(a,i,size);
+		}
+	}
+	function heapsort(a,size){
+		buildHeap(a,size);
+		for(var i=size-1;i>=0;i--){
+			var temp=a[0];
+			a[0]=a[i];
+			a[i]=temp;
+			var b=[];
+			b.push(0,i);
+			data.push(b);
+			heapAdjust(a,0,i);
 		}
 		return data;
 	}
@@ -275,6 +317,9 @@
 				break;
 			case 'quick':
 				quickSort(listsData,0,listsData.length-1);
+				break;
+			case "heap":
+				data=heapsort(listsData,listsData.length);
 				break;
 		}
 		sorts(data);
