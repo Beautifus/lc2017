@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task9</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="layer1"><span>Super</span>
+		<div class="layer2"><span>Car</span>
+			<div class="layer3"><span>Poor</span>
+				<div class="layer4"><span>Poor</span></div>
+				<div class="layer4"><span>Pig</span></div>
+				<div class="layer4"><span>Cola</span></div>
+				<div class="layer4"><span>Soccer</span></div>
+			</div>
+			<div class="layer3"><span>Phone</span></div>
+			<div class="layer3">
+				<div class="layer4"><span>Book</span></div>
+				<div class="layer4"><span>School</span></div>
+			</div>
+		</div>
+		<div class="layer2"><span>Note</span>
+			<div class="layer3"><span>Human</span>
+				<div class="layer4"><span>Code</span></div>
+				<div class="layer4"><span>Operator</span></div>
+				<div class="layer4"><span>Man</span></div>
+			</div>
+			<div class="layer3"><span>Program</span>
+				<div class="layer4"><span>Bement</span></div>
+				<div class="layer4"><span>Cat</span></div>
+			</div>
+			<div class="layer3"><span>Glass</span></div>
+		</div>
+		<div class="layer2"><span>Fish</span></div>
+	</div>
+	<div id="bian">
+		<input type="text" name="" id="keywd">
+		<button id="query">查询</button>
+		<select id="options">
+			<option value="layer">层次遍历</option>
+			<option value="deep">深度遍历</option>
+		</select>
+		<button id="order">遍历</button>
+		<button id="remove">删除</button>
+		<input type="text" name="" id="addnode">添加节点
+		<button id="addNode">添加</button>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">
+	var query=document.getElementById("query");
+	var keywd=document.getElementById("keywd");
+	var firstnode=document.getElementsByClassName("layer1")[0];
+	var arr=[];
+	var btns=document.getElementsByTagName("button");
+	var order=document.getElementById("order");
+	var options=document.getElementById("options");
+	var divs=document.getElementsByTagName("div");
+	var addnode=document.getElementById("addnode");
+	var t;
+	var lock=false;
+	var checked=-1;
+	init();
+</script>
+</html>
