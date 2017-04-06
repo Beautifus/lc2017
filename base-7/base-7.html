@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task7</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	*{
+		background: white;
+	}
+		.first{
+			display: flex;
+			margin:0 auto;
+			width:90%;
+			height:200px;
+			justify-content:space-around;
+			border:1px solid black;
+			align-items: center;
+		}
+		.second{
+			flex:0.48;
+			width:40%;
+			height:80%;
+			display: flex;
+			justify-content:space-around;
+			border:1px solid black;
+			align-items: center;
+		}
+		.third{
+			flex:0.48;
+			width:45%;
+			height:80%;
+			display: flex;
+			justify-content:space-around;
+			border:1px solid black;
+			align-items: center;
+		}
+		.four{
+			flex:0.48;
+			width:45%;
+			height:80%;
+			border:1px solid black;
+		}
+		#bian{
+			margin-top:20px;
+			width: 100%;
+			height:40px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="first">
+		<div class="second">
+			<div class="third">
+				<div class="four">
+					
+				</div>
+				<div class="four">
+					
+				</div>
+			</div>
+			<div class="third">
+				<div class="four">
+					
+				</div>
+				<div class="four">
+					
+				</div>
+			</div>
+		</div>
+		<div class="second">
+			<div class="third">
+				<div class="four">
+					
+				</div>
+				<div class="four">
+					
+				</div>
+			</div>
+			<div class="third">
+				<div class="four">
+					
+				</div>
+				<div class="four">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="bian">
+		<select id="options">
+			<option value="pre">前序遍历</option>
+			<option value="in">中序遍历</option>
+			<option value="post">后序遍历</option>
+		</select>
+		<button id="order">遍历</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var node=document.getElementsByClassName("first")[0];
+	var arr=[];
+	var order=document.getElementById("order");
+	var options=document.getElementById("options");
+	var t;
+	function preOrder(node){
+		if(node!=null){
+			arr.push(node);
+			if(node.firstChild){
+				preOrder(node.firstElementChild);
+			}
+			if(node.lastChild){
+				preOrder(node.lastElementChild);
+			}
+		}
+	}
+	function inOrder(node){
+		if(node!=null){			
+			if(node.firstChild){
+				inOrder(node.firstElementChild);
+			}
+			arr.push(node);
+			if(node.lastChild){
+				inOrder(node.lastElementChild);
+			}
+		}
+	}
+	function postOrder(node){
+		if(node!=null){			
+			if(node.firstChild){
+				postOrder(node.firstElementChild);
+			}
+			if(node.lastChild){
+				postOrder(node.lastElementChild);
+			}
+			arr.push(node);
+		}
+	}
+	order.onclick=function(){
+		if(t){
+			clearInterval(t);
+			for(var i=0;i<arr.length;i++){
+				arr[i].style.background="#fff";
+			}
+		}
+		arr=[];	
+		switch(options.value){
+			case 'pre':
+				preOrder(node);
+				break;
+			case 'in':
+				inOrder(node);
+				break;
+			case 'post':
+				postOrder(node);
+		}
+		var k=0;
+		 t=setInterval(function(){
+			if(k>0){
+				arr[k-1].style.background="#fff";
+			}
+			if(k==arr.length){
+				clearInterval(t);
+			}else{
+				arr[k].style.background="blue";
+				k++;
+			}
+			
+		},1000)
+	}
+</script>
+</html>
