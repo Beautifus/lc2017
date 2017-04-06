@@ -12,6 +12,14 @@ body{
 	width:95%;
 	margin:0 auto;
 }
+hr{
+	width:400px;
+	height:5px;
+	border:1px solid #333;
+	background-color:#333;
+	border-radius:3px;
+	margin:0 auto;
+}
 .layer1{
 	display:inline-flex;
 	margin:0 auto;
