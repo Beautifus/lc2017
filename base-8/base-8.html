@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task8</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+	<div class="first"><span>Super</span>
+		<div class="second"><span>Car</span>
+			<div class="third"><span>Poor</span>
+				<div class="four"><span>Poor</span></div>
+				<div class="four"><span>Pig</span></div>
+				<div class="four"><span>Cola</span></div>
+				<div class="four"><span>Soccer</span></div>
+			</div>
+			<div class="third"><span>Phone</span></div>
+			<div class="third">
+				<div class="four"><span>Book</span></div>
+				<div class="four"><span>School</span></div>
+			</div>
+		</div>
+		<div class="second"><span>Note</span>
+			<div class="third"><span>Human</span>
+				<div class="four"><span>Code</span></div>
+				<div class="four"><span>Operator</span></div>
+				<div class="four"><span>Man</span></div>
+			</div>
+			<div class="third"><span>Program</span>
+				<div class="four"><span>Bement</span></div>
+				<div class="four"><span>Cat</span></div>
+			</div>
+			<div class="third"><span>Glass</span></div>
+		</div>
+		<div class="second"><span>Fish</span></div>
+	</div>
+	<div id="bian">
+		<select id="options">
+			<option value="layer">层次遍历</option>
+			<option value="deep">深度遍历</option>
+		</select>
+		<input type="text" name="" id="keywd">
+		<button id="query">查询</button>
+		<button id="order">遍历</button>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">
+	var query=document.getElementById("query");
+	var keywd=document.getElementById("keywd");
+	var node=document.getElementsByClassName("first")[0];
+	var arr=[];
+	var btns=document.getElementsByTagName("button");
+	var order=document.getElementById("order");
+	var options=document.getElementById("options");
+	var t;
+	var lock=false;
+	init();
+</script>
+</html>
