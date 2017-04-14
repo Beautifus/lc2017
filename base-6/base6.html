@@ -64,7 +64,8 @@
 		var event=event||window.event;
 		var target=event.target||event.srcElement;
 		if(ins.value){
-			var arrs=ins.value.split(/[\s+\n+\r+\，+\,+\、+\t+\ +]/g);
+			var re =  /[^a-zA-Z\d\u4e00-\u9fa5]+/g;
+			var arrs = ins.value.replace(re," ").split(" ");
 			for(var i=0;i<arrs.length;i++){
 				var newspan=creates(arrs[i]);
 				buttonpush(target.id,newspan);
