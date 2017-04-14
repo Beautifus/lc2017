@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE JavaScript Task 06</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.spans{
+			display:inline-block;
+			width:50px;
+			height:30px;
+			margin:10px 10px;
+			text-align:center;
+			background:#333;
+			vertical-align: middle;
+			padding-top: 15px;
+		}
+		#handlers{
+			margin-top:20px;
+			margin-left:100px;
+		}
+		#buttons{
+			margin-top:10px;
+		}
+		.found{
+			color:red;
+			font-size:21px;
+		}
+		p{
+			margin-bottom:20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="handlers">
+		<p>
+			<label for="ins">请输入:</label>
+			<textarea type="text" name="ins" id="ins"></textarea>
+		</p>
+		<p>
+			<label for="myquery">查  询:</label>
+			<input type="text" name="myquery" id="myquery">
+		</p>
+		<div id="buttons">
+			<button id="leftin">左侧入</button>
+			<button id="rightin">右侧入</button>
+			<button id="leftout">左侧出</button>
+			<button id="rightout">右侧出</button>
+			<button id="querybtn">查询</button>
+		</div>
+		<div id="container"></div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	var container=document.getElementById("container");
+	var myquery=document.getElementById("myquery");
+	var buttons=document.getElementById("buttons");
+	var ins=document.getElementById("ins");
+	buttons.onclick=function(event){
+		var event=event||window.event;
+		var target=event.target||event.srcElement;
+		if(ins.value){
+			var arrs=ins.value.split(/[\s+\n+\r+\，+\,+\、+\t+\ +]/g);
+			for(var i=0;i<arrs.length;i++){
+				var newspan=creates(arrs[i]);
+				buttonpush(target.id,newspan);
+			}		
+			ins.value="";
+		}else if(myquery.value){
+			var query=myquery.value;
+			buttonpush(target.id,query);
+			myquery.value="";
+		}
+	}
+	function buttonpush(id,value){
+		switch(id){
+			case "leftin":
+				container.insertBefore(value,container.firstChild);
+				break;
+			case "rightin":
+				container.appendChild(value);
+				break;
+			case "leftout":
+				container.removeChild(container.firstChild);
+				break;
+			case "rightout":
+				container.removeChild(container.lastChild);
+				break;
+			case "querybtn":
+				check(value);
+				break;
+		}	
+	}
+	function check(value){
+		var spans=document.getElementsByClassName("spans");
+		[].forEach.call(spans,function(myspan){
+			if(myspan.className.indexOf("found")>0){
+				var index=myspan.className.indexOf("found");
+				myspan.className=myspan.className.slice(0,index);
+			}
+		});
+		var flag=false;
+		[].forEach.call(spans,function(myspan){
+			if(myspan.innerHTML==value){
+				flag=true;
+				myspan.className+=' found';
+			}
+		})
+		if(!flag){
+			alert("没有相关文字");
+		}
+	}
+	function creates(val){
+		var span=document.createElement("span");
+		span.className="spans";
+		span.innerHTML=val;
+		span.onclick=function(event){
+			var event=event||window.event;
+			var target=event.target||event.srcElement;
+			var parent=target.parentNode;
+			parent.removeChild(target);
+		};
+		return span;
+	}
+
+</script>
+</html>
