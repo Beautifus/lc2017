@@ -17,6 +17,8 @@ base-4   task4 https://beautifus.github.io/lc2017/base-4/base4.html
 
 base-5   task5 https://beautifus.github.io/lc2017/base-5/base5.html
 
+base-6   task6 https://beautifus.github.io/lc2017/base-6/base6.html
+
 base-7   task7 https://beautifus.github.io/lc2017/base-7/base-7.html
 
 base-8   task8 https://beautifus.github.io/lc2017/base-8/base-8.html
