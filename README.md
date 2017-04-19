@@ -25,6 +25,10 @@ base-8   task8 https://beautifus.github.io/lc2017/base-8/base-8.html
 
 base-9   task9 https://beautifus.github.io/lc2017/base-9/base-9.html
 
+v-task1 薇学院任务1 https://beautifus.github.io/lc2017/v-task1/1-1.html
+
+v-task2 薇学院任务2 https://beautifus.github.io/lc2017/v-task2/2.html
+
 
 
  
