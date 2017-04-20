@@ -1,0 +1,177 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-family: Microsoft Yahei;
+	font-size: 18px;
+	width:100%;
+	height:auto;
+}
+.mynav{
+	background:#555;
+	width:100%;
+	height:40px;
+	position:relative;
+
+}
+.mynav h1{
+	text-indent:1em;
+	display: inline-block;
+}
+.mynav ul{
+	height:100%;
+	position:absolute;
+	display: inline-block;
+	top:0px;
+	right:0px;
+}
+.mynav ul li{
+	height:100%;
+	float:left;
+	padding-right:40px;
+	list-style: disc;
+	vertical-align: middle;
+	text-align:center;
+}
+.mynav li a{
+	height:100%;
+	display: inline-block;
+	vertical-align:middle;
+	line-height: 40px;
+	text-decoration:none;
+	color:#fff;
+}
+.mycontent{
+	width:100%;
+	box-sizing:border-box;
+	float:left;
+	background:#999;
+}
+.left{
+	padding:10px;
+	margin-right:500px;
+	position:relative;
+}
+.passage,.sideline{
+	background:#fff;
+	border-radius:5px;
+	margin-bottom:10px;
+	border:1px solid #555;
+	padding:10px;
+}
+.sideline{
+	float:left;
+	width:460px;
+	margin-left:-490px;
+	margin-top:10px;
+}
+.footer{
+	background:#555;
+	width:100%;
+	box-sizing:border-box;
+	height:40px;
+	position:relative;
+	bottom:0px;
+	display: table;
+	text-align:center;
+}
+.footer div{
+	display:table-cell;
+	vertical-align: middle;
+}
+.passage .para{
+	text-indent:2em;
+}
+img{
+	display: block;
+	margin:10px 0;
+	width:80px;
+	height:80px;
+}
+.passage ul li{
+	list-style-position: inside;
+}
+.pics{
+	width:100%;
+	display:flex;
+	justify-content:space-around;
+	flex-wrap:wrap;
+}
+.pics span{
+	display:inline-block;
+	width:150px;
+	padding:10px;
+	margin-top:10px;
+	margin-right:10px;
+	border:1px solid #546;
+	text-align: center;
+}
+.pics span img{
+	margin:10px auto;
+}
+ol li{
+	list-style-position:inside;
+}
+table{
+	width:100%;
+	border:1px solid silver;
+	border-collapse: collapse;
+}
+table thead{
+	background:#666;
+
+}
+table td,th{
+	border:1px solid #777;
+	text-align:left;
+
+}
+.formp{
+	margin-top:20px;
+	text-align: center;
+}
+.formp span{
+	display: inline-block;
+	width:40%;
+	margin-left:-3px;
+}
+.formp span:first-child{
+	text-align:right;
+	padding-right: 10px;
+}
+.formp span:last-child{
+	text-align: left;
+	padding-left: 10px;
+}
+.submit{
+	height:40px;
+	width:100%;
+	color:#fff;
+	background:blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
