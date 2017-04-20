@@ -62,6 +62,7 @@ body{
 	padding:10px;
 }
 .sideline{
+	font-size:12px;
 	float:left;
 	width:460px;
 	margin-left:-490px;
@@ -134,7 +135,7 @@ table td,th{
 }
 .formp span{
 	display: inline-block;
-	width:40%;
+	width:48%;
 	margin-left:-3px;
 }
 .formp span:first-child{
