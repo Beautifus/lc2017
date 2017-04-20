@@ -29,6 +29,11 @@ v-task1 薇学院任务1 https://beautifus.github.io/lc2017/v-task1/1-1.html
 
 v-task2 薇学院任务2 https://beautifus.github.io/lc2017/v-task2/2.html
 
+v-task3 薇学院任务3 https://beautifus.github.io/lc2017/v-task3/3.html
+
+v-task4 薇学院任务4 https://beautifus.github.io/lc2017/v-task4/4.html
+
+
 
 
  
