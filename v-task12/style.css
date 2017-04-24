@@ -1,0 +1,129 @@
+*{
+	padding:0;
+	margin:0;
+}
+table{
+	
+}
+.mytable{
+	margin:0 200px;;
+}
+.tt tr>td{
+	margin:20px 20px;
+}
+.tt tr:nth-of-type(2n+1){
+	background:black;
+	background-color:rgba(150,145,145,0.5);
+}
+.tt tr:nth-of-type(2n){
+	background:white;
+}
+.tt tr:nth-child(1){
+	background-color:gray;
+	color:white;
+}
+.tt tr:nth-child(2){
+	color:red;
+}
+.tt tr:nth-child(3){
+	color:red;
+}
+.tt tr:nth-child(4){
+	color:red;
+}
+.myinput{
+	margin:20px 200px;
+	width:5em;
+	transition:width 0.6s ease-in-out;
+	-webkit-transition:width 0.6s ease-in-out;
+}
+.myinput:focus{
+	border:1px solid blue;
+	width:10em;
+}
+
+.list{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+}
+.mylist{
+	list-style:none;
+	display:flex;
+	height:2rem;
+	width:6rem;
+	justify-content:space-around;
+}
+.mylist>li{
+	flex:1;
+	background:rgba(255,255,255,0.5);
+	margin:0 1px;
+	color:#fff;
+	padding-top:5px;
+	width:2em;
+	height:2em;
+	line-height:2em;
+	text-align:center;
+}
+li>a{
+	text-decoration:none;
+	color:white;
+}
+.lunbo{
+	width:300px;
+	height:200px;
+	margin:0 auto;
+	overflow:hidden;
+	border:1px solid black;
+	position:relative;
+	
+}
+.ha{
+	width:900px;	
+	height:200px;
+	
+	border-radius:5px;
+}
+.mypic{
+	list-style:none;
+	z-index:999;
+	
+}
+.mypic li{
+	display:inline-block;
+	float:left;
+}
+.mypic li:nth-child(1){
+	background:red;
+	width:300px;
+	height:200px;
+}
+.mypic li:nth-child(2){
+	background:black;
+	width:300px;
+	height:200px;
+
+}
+.mypic li:nth-child(3){
+	background:green;
+	width:300px;
+	height:200px;
+	float:left;
+}	
+
+.play{
+	animation:ma 5s ease-out infinite alternate;
+}
+
+@keyframes ma{
+	0%{
+		margin-left:0px;	
+	};
+	50%{
+		margin-left:-300px;
+	}
+	100%{
+		margin-left:-600px;
+	}
+
+}
