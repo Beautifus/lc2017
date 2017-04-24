@@ -1,0 +1,378 @@
+<html>
+<head>
+<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1,user-scaleable=no,minimum-scale=1.0">
+<style type="text/css">
+*{
+	padding:0;
+	margin:0;
+}
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:24px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-fanhui:before { content: "\e600"; }
+.icon-biaoqian:before { content: "\e601"; }
+
+
+header{
+	display:flex;
+	background-color:rgb(145,212,218);
+	height:60px;
+	align-items:center;
+	color:#fff;
+	justify-content:space-between;
+}
+header>span{
+	flex:1;
+	
+}
+header>span>h2{
+	display:inline-block;
+}
+header>h1{
+	position:relative;
+	-webite-box-flex:2;
+	box-flex:2;
+	flex:2;
+}
+.myul{
+	display:flex;
+	list-style:none;
+	justify-content:space-around;
+}
+.myul>li{
+	flex:1;
+	padding:10px 0;
+	text-align:center;
+	font:bold  18px 微软雅黑;
+}
+.myul>li:hover{
+	border-bottom:3px solid rgb(145,212,218);
+}
+.ban{
+	background-image:url('xiong.png');
+	height:12rem;
+	background-size:100% 100%;
+	background-position:center;
+}
+.tab{
+	display:flex;
+	justify-content:space-around;
+	border-bottom:.15rem solid gray;
+}
+.tab>.tu{
+	flex:1;
+	text-align:center;
+	padding:20px;
+}
+.tab>.tu>span{
+	display:block;
+	margin:10px 0;
+}
+.xiaoxiong{
+	background-image:url('xiong.png');
+	height:6rem;
+	width:6rem;
+	background-repeat:repeat-y;
+	background-size:100% 100%;
+	background-position:center;
+
+}
+.fenlan{
+	margin-top:10px;
+	padding-bottom:2rem;
+	display:flex;
+	justify-content:space-around;
+}
+.fenlan>div{
+	flex:1;
+	border-left:.15rem solid gray;
+	padding:20px;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	align-items:center;
+}
+.fenlan>div>p{
+}
+.fenlan>div:first-child{
+	border-left:none;
+}
+.fenlan>div>h1{
+	flex:2;
+}
+.fenlan>div>h2{
+	color:gray;
+}
+.b-gray{
+	background-color:rgba(150,145,145,0.5);
+	height:1.5rem;
+	width:100%;
+}
+.mokuai{
+	border-bottom:.15rem solid rgba(150,145,145,0.5);
+	padding-bottom:1rem;
+	margin:1rem;
+}
+.model{
+	display:flex;
+	justify-content:space-between;
+	margin-left:1rem;
+}
+.model>div{
+	display:flex;
+	justigy-content:space-between;
+	flex-direction:column;
+	
+}
+.model>.list{
+	flex:1;
+	background-image:url('list.png');
+	width:6rem;
+	height:6rem;
+	background-repeat:repeat-y;
+	background-size:100% 100%;
+	background-position:center;
+}
+.model>.wenan1{
+	flex:1;
+	text-align:center;
+}
+.model>.wenan1>div{
+	background-color:rgba(150,145,145,0.5);
+	min-width:7rem;
+	margin:.5rem;
+	padding:.5rem;
+	border-radius:.5rem;
+	border-redius:.5rem;
+}
+.model>.wenan2>div{
+	background-color:rgba(150,145,145,0.5);
+	min-width:7rem;
+	margin:.5rem;
+	padding:.5rem;
+	border-radius:.5rem;
+}
+.model>.wenan2{
+	flex:1;
+	text-align:center;
+}
+.list1{
+	background-image:url('list-1.png');
+	width:7rem;
+	height:5rem;
+	background-position:center;
+	background-repeat:repeat-y;
+	background-size:100% 100%;
+
+}
+
+.content{
+	display:flex;
+	justify-content:space-around;
+	padding:1rem;
+	border-bottom:.15rem solid rgba(150,145,145,0.5);
+}
+.content>.list1{
+	flex:1;
+}
+.content>.title{
+	flex:2;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+}
+.title>h1{
+	font-size:22px;
+}
+.title>div>span{
+	color:rgba(150,145,145,0.5);
+}
+.anothercon{
+	display:flex;
+	justify-content:space-around;
+	padding:10px;
+	flex-direction:column;
+}
+.anothercon>h1{
+	flex:1;
+}
+.anothercon>div:last-child{
+	flex:1;
+	color:rgba(150,145,145,0.5);
+}
+.anothercon>div:first-child{
+	flex:3;
+}
+.pic{
+	display:flex;
+	justigy-content:space-around;
+}
+.pic>div{
+	flex:1;
+}
+</style>
+</head>
+<body>
+	<header>
+		<span class="s1">
+			 <i class="icon"><</i>
+			<h2>返回</h2>
+		</span>
+		<h1 class="s2">这是标题</h1>
+	</header>
+	<div>
+		<ul class="myul">
+			<li>导航</li>
+			<li>导航</li>
+			<li>导航</li>
+			<li style="	border-bottom:3px solid rgb(145,212,218);">导航</li>
+			<li>导航</li>
+		</ul>
+		<div class="ban"></div>
+		<div class="tab">
+			<div class="tu">
+				<span>
+					<i>&#xe601;</i>
+				</span>
+				<span>标签</span>
+			</div>
+			<div class="tu">
+				<span>
+					<i>&#xe601;</i>
+				</span>
+				<span>标签</span>
+			</div>
+			<div class="tu">
+				<span>
+					<i>&#xe601;</i>
+				</span>
+				<span>标签</span>
+			</div>
+			<div class="tu">
+				<span>
+					<i>&#xe601;</i>
+				</span>
+				<span>标签</span>
+			</div>
+			<div class="tu">
+				<span>
+					<i>&#xe601;</i>
+				</span>
+				<span>标签</span>
+			</div>
+		</div>
+
+		<div class="fenlan">
+			<div class="fen1">
+				<p class="xiaoxiong "></p>
+				<h1>分栏一</h1>
+				<h2>分栏小标题</h2>
+			</div>
+			<div class="fen2">
+				<p class="xiaoxiong "></p>
+				<h1>分栏二</h1>
+				<h2>分栏小标题</h2>
+			</div>
+			<div class="fen3">
+				<p class="xiaoxiong "></p>
+				<h1>分栏三</h1>
+				<h2>分栏小标题</h2>
+			</div>	
+		</div>
+		<div class="b-gray"></div>
+		<h1 class="mokuai">模块一</h1>
+		<div class="model">
+			<div class="list"></div>
+			<div class="wenan1">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+			<div class="wenan2">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+		</div>
+		<div class="model">
+			<div class="list"></div>
+			<div class="wenan1">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+			<div class="wenan2">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+		</div>
+		<div class="b-gray"></div>
+		<h1 class="mokuai">模块二</h1>
+		<div class="model">
+			<div class="list"></div>
+			<div class="wenan1">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+			<div class="wenan2">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+		</div>
+		<div class="model">
+			<div class="list"></div>
+			<div class="wenan1">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+			<div class="wenan2">
+				<div>这是文案</div>
+				<div>这是文案</div>
+			</div>
+		</div>
+		<div class="b-gray"></div>
+		<div class="content">
+			<div class="list1"></div>
+			<div class="title">
+				<h1>这是文章标题字号是22的文章标题</h1>
+				<div>
+					<span>文章来源</span>
+					<span>6分钟前</span>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="list1"></div>
+			<div class="title">
+				<h1>这是另一个文章标题</h1>
+				<div>
+					<span>文章来源</span>
+					<span>6分钟前</span>
+				</div>
+			</div>
+		</div>
+		<div class="anothercon">
+			<h1>这个也是文章标题字号是22的文章标题</h1>
+			<div class="pic"> 
+				<div class="list1"></div>
+				<div class="list1"></div>
+				<div class="list1"></div>
+			</div>
+			<div>
+				<span>文章来源</span>
+				<span>7分钟前</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
